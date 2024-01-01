@@ -18,7 +18,7 @@ def create_access_token(data: dict):
 
     data_copy.update({"exp": expiration_time})
 
-    token = jwt.encode(data, algorithm=settings.ALGORITHM, key=settings.SECRET_KEY)
+    token = jwt.encode(data_copy, algorithm=settings.ALGORITHM, key=settings.SECRET_KEY)
 
     return token
 
